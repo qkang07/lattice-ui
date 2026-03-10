@@ -1,0 +1,4 @@
+packages:
+  - 'packages/*'  # All packages in the packages/ directory
+  - 'apps/*'      # All apps in the apps/ directory
+  - '!**/test/**' # Exclude any folders named test
