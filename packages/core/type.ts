@@ -1,3 +1,8 @@
+// =========== Expression Types ============
+
+
+
+
 // =========== Basic Types ============
 
 
@@ -96,6 +101,8 @@ export type ArrayNode = {
     itemNode: ChildNode
 } & ContainerNode
 
+
+// can be nested in other nodes.
 export type ChildNode = ComponentNode | ElementNode | ArrayNode | SlotNode
 
-export type LatticeNode = BlockNode | ComponentNode | ElementNode | ArrayNode | SlotNode
+// 
