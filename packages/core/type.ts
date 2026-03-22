@@ -1,6 +1,6 @@
 // =========== Expression Types ============
 
-
+r[pmmmm0nbv` `]
 
 
 // =========== Basic Types ============
@@ -45,18 +45,20 @@ export type ContainerNode = {
 }
 
 // the container of lattice block, used in host platform like react, vue, etc.
-export type BlockNode = {
-    type: 'block'
-    props: Record<string, any>
-    // the components registered in the block, will be referenced by name
-    components: Record<string, any>
-} & ContainerNode
+// export type BlockNode = {
+//     type: 'block'
+//     props: Record<string, any>
+//     // the components registered in the block, will be referenced by name
+//     components: Record<string, any>
+// } & ContainerNode
 
 // a component can be used
 export type ComponentNode = {
     type: 'component'
     name: string
     props: Record<string, any>
+    // the components registered in the block, will be referenced by name
+    components: Record<string, any>
 } & NodeBase & ContainerNode
 
 // basic ui element, include view, text, img, currently.
@@ -106,3 +108,9 @@ export type ArrayNode = {
 export type ChildNode = ComponentNode | ElementNode | ArrayNode | SlotNode
 
 // 
+
+export type ComponentDef = {
+    name: string
+    props: PropType[]
+    children: ChildNode[]
+}
