@@ -1,7 +1,5 @@
 // =========== Expression Types ============
 
-r[pmmmm0nbv` `]
-
 
 // =========== Basic Types ============
 
@@ -21,12 +19,23 @@ export type LiteralValue = {
     value: string | number | boolean | Record<string, any> | Array<any>
 }
 
+export type ValueType = 'string' | 'number' | 'boolean' | 'object' | 'array' | 'ref' | 'any'
+
 export type Value = RefValue | ExpValue | LiteralValue
 
 
 export type PropType = {
     name: string
     value: Value
+}
+
+
+// property definition, could be used for prop, param, or state
+export type PropDef = {
+    name: string
+    type: ValueType
+    description?: string
+    label?: string
 }
 
 
@@ -111,6 +120,7 @@ export type ChildNode = ComponentNode | ElementNode | ArrayNode | SlotNode
 
 export type ComponentDef = {
     name: string
-    props: PropType[]
-    children: ChildNode[]
+    props: PropDef[]
+    events: [string, PropDef[]]
+    node: ChildNode
 }
